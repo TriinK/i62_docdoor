@@ -25,7 +25,7 @@
     <div id="base" class="">
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u0" class="ax_default box_1">
+      <div id="u0" class="ax_default banner">
         <div id="u0_div" class=""></div>
       </div>
 
@@ -50,81 +50,177 @@
         </div>
       </div>
 
-      <!-- Unnamed (Image) -->
-      <div id="u4" class="ax_default image">
-        <img id="u4_img" class="img " src="images/docdoor/u4.jpg"/>
+      <!-- Unnamed (Rectangle) -->
+      <div id="u4" class="ax_default heading_2">
+        <div id="u4_div" class=""></div>
+        <div id="u4_text" class="text ">
+          <p><span>Vali eriala ja nimi:</span></p>
+        </div>
       </div>
 
       <!-- Unnamed (Rectangle) -->
       <div id="u5" class="ax_default heading_2">
         <div id="u5_div" class=""></div>
         <div id="u5_text" class="text ">
-          <p><span>Vali eriala ja asukoht:</span></p>
+          <p><span>Aeg alates:</span></p>
         </div>
       </div>
 
-      <!-- Unnamed (Rectangle) -->
-      <div id="u6" class="ax_default heading_2">
-        <div id="u6_div" class=""></div>
-        <div id="u6_text" class="text ">
-          <p><span>Aeg alates:</span></p>
-        </div>
+      <!-- Unnamed (Checkbox) -->
+      <div id="u6" class="ax_default checkbox">
+        <label for="u6_input" style="position: absolute; left: 0px;">
+          <div id="u6_text" class="text ">
+            <p><span>Eesti keeles</span></p>
+          </div>
+        </label>
+        <input id="u6_input" type="checkbox" value="checkbox" checked/>
       </div>
 
       <!-- Unnamed (Checkbox) -->
       <div id="u7" class="ax_default checkbox">
         <label for="u7_input" style="position: absolute; left: 0px;">
           <div id="u7_text" class="text ">
-            <p><span>Eesti keeles</span></p>
-          </div>
-        </label>
-        <input id="u7_input" type="checkbox" value="checkbox" checked/>
-      </div>
-
-      <!-- Unnamed (Checkbox) -->
-      <div id="u8" class="ax_default checkbox">
-        <label for="u8_input" style="position: absolute; left: 0px;">
-          <div id="u8_text" class="text ">
             <p><span>Muus keeles</span></p>
           </div>
         </label>
-        <input id="u8_input" type="checkbox" value="checkbox"/>
+        <input id="u7_input" type="checkbox" value="checkbox"/>
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u9" class="ax_default button">
-        <div id="u9_div" class=""></div>
-        <div id="u9_text" class="text ">
-          <p><span>&nbsp;&nbsp;&nbsp; OTSI AEGU</span></p>
+      <div id="u8" class="ax_default button">
+        <div id="u8_div" class=""></div>
+        <div id="u8_text" class="text ">
+          <p><span>&nbsp;&nbsp;&nbspOTSI AEGU</span></p>
         </div>
       </div>
 
       <!-- Unnamed (Horizontal Line) -->
-      <div id="u10" class="ax_default arrow">
-        <img id="u10_img" class="img " src="images/docdoor/u10.png"/>
+      <div id="u9" class="ax_default arrow">
+        <img id="u9_img" class="img " src="images/docdoor/u9.png"/>
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u11" class="ax_default box_1">
-        <div id="u11_div" class=""></div>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
-      <div id="u12" class="ax_default heading_2">
-        <div id="u12_div" class=""></div>
-        <div id="u12_text" class="text ">
-          <p><span>21/08/2018</span></p>
-        </div>
+      <div id="u10" class="ax_default box_1">
+          <input style="font-size: 1.5rem; text-align: center" type="date" name="bday" id="u10_div" class="">
       </div>
 
       <!-- Unnamed (Text Field) -->
-      <div id="u13" class="ax_default text_field">
-        <input id="u13_input" type="text" value=""/>
+          <div id="u11" class="ax_default text_field">
+            <form autocomplete="off" action="/action_page.php">
+              <div class="autocomplete" style="width:300px;">
+        <input onclick="showImage()" id="u11_input" type="text" value="" placeholder="Eriala või nimi"/>
       </div>
+            </form>
+          </div>
+      <script>
+          var specialities = ["anestesioloogia", "allergoloogia-immunoloogia", "dermatoveneroloogia", "diabeediõendus", "endokrinoloogia", "gastroenteroloogia", "günekoloogia", "hambaarst", "hematoloogia", "infektsioonhaigused", "kardioloogia", "kardiovaskulaarkirurgia", "lastekirurgia", "nefroloogia", "neurokirurgia", "ortodontia", "neuroloogia", "pediaatria", "psühhiaatria", "pulmonoloogia", "reumatoloogia", "sisehaigused", "suu-, näo- ja lõualuukirurgia", "taastusravi ja füsiaatria", "töötervishoid", "uroloogia", "üldkirurgia", "Reet Laasik","Heli Kopter","Aita-Leida Kuusepuu","Mari Maasikas","Tuule Iil"];
+          function showImage() {
+              /*the autocomplete function takes two arguments,
+  the text field element and an array of possible autocompleted values:*/
+
+          }
+          function autocomplete(inp, arr) {
+              /*the autocomplete function takes two arguments,
+              the text field element and an array of possible autocompleted values:*/
+              var currentFocus;
+              /*execute a function when someone writes in the text field:*/
+              inp.addEventListener("input", function(e) {
+                  var a, b, i, val = this.value;
+                  /*close any already open lists of autocompleted values*/
+                  closeAllLists();
+                  if (!val) { return false;}
+                  currentFocus = -1;
+                  /*create a DIV element that will contain the items (values):*/
+                  a = document.createElement("DIV");
+                  a.setAttribute("id", this.id + "autocomplete-list");
+                  a.setAttribute("class", "autocomplete-items");
+                  /*append the DIV element as a child of the autocomplete container:*/
+                  this.parentNode.appendChild(a);
+                  /*for each item in the array...*/
+                  for (i = 0; i < arr.length; i++) {
+                      /*check if the item starts with the same letters as the text field value:*/
+                      if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                          /*create a DIV element for each matching element:*/
+                          b = document.createElement("DIV");
+                          /*make the matching letters bold:*/
+                          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                          b.innerHTML += arr[i].substr(val.length);
+                          /*insert a input field that will hold the current array item's value:*/
+                          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                          /*execute a function when someone clicks on the item value (DIV element):*/
+                          b.addEventListener("click", function(e) {
+                              /*insert the value for the autocomplete text field:*/
+                              inp.value = this.getElementsByTagName("input")[0].value;
+                              /*close the list of autocompleted values,
+                              (or any other open lists of autocompleted values:*/
+                              closeAllLists();
+                          });
+                          a.appendChild(b);
+                      }
+                  }
+              });
+              /*execute a function presses a key on the keyboard:*/
+              inp.addEventListener("keydown", function(e) {
+                  var x = document.getElementById(this.id + "autocomplete-list");
+                  if (x) x = x.getElementsByTagName("div");
+                  if (e.keyCode == 40) {
+                      /*If the arrow DOWN key is pressed,
+                      increase the currentFocus variable:*/
+                      currentFocus++;
+                      /*and and make the current item more visible:*/
+                      addActive(x);
+                  } else if (e.keyCode == 38) { //up
+                      /*If the arrow UP key is pressed,
+                      decrease the currentFocus variable:*/
+                      currentFocus--;
+                      /*and and make the current item more visible:*/
+                      addActive(x);
+                  } else if (e.keyCode == 13) {
+                      /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                      e.preventDefault();
+                      if (currentFocus > -1) {
+                          /*and simulate a click on the "active" item:*/
+                          if (x) x[currentFocus].click();
+                      }
+                  }
+              });
+              function addActive(x) {
+                  /*a function to classify an item as "active":*/
+                  if (!x) return false;
+                  /*start by removing the "active" class on all items:*/
+                  removeActive(x);
+                  if (currentFocus >= x.length) currentFocus = 0;
+                  if (currentFocus < 0) currentFocus = (x.length - 1);
+                  /*add class "autocomplete-active":*/
+                  x[currentFocus].classList.add("autocomplete-active");
+              }
+              function removeActive(x) {
+                  /*a function to remove the "active" class from all autocomplete items:*/
+                  for (var i = 0; i < x.length; i++) {
+                      x[i].classList.remove("autocomplete-active");
+                  }
+              }
+              function closeAllLists(elmnt) {
+                  /*close all autocomplete lists in the document,
+                  except the one passed as an argument:*/
+                  var x = document.getElementsByClassName("autocomplete-items");
+                  for (var i = 0; i < x.length; i++) {
+                      if (elmnt != x[i] && elmnt != inp) {
+                          x[i].parentNode.removeChild(x[i]);
+                      }
+                  }
+              }
+              /*execute a function when someone clicks in the document:*/
+              document.addEventListener("click", function (e) {
+                  closeAllLists(e.target);
+              });
+          }
+          autocomplete(document.getElementById("u11_input"), specialities);
+      </script>
 
       <!-- Unnamed (Droplist) -->
-      <div id="u14" class="ax_default droplist">
-        <select id="u14_input">
+      <div id="u12" class="ax_default droplist">
+        <select id="u12_input">
           <option selected value="EE">EE</option>
           <option value="EN">EN</option>
           <option value="RU">RU</option>
@@ -132,24 +228,128 @@
       </div>
 
       <!-- Unnamed (Shape) -->
-      <div id="u15" class="ax_default icon">
-        <img id="u15_img" class="img " src="images/docdoor/u15.png"/>
+      <div style="display:none" id="u13" class="ax_default icon">
+        <img id="u13_img" class="img " src="images/docdoor/u13.png"/>
       </div>
 
       <!-- Unnamed (Text Field) -->
-      <div id="u16" class="ax_default text_field">
-        <input id="u16_input" type="text" value=""/>
+      <div id="u14" class="ax_default text_field">
+        <input onclick="showImage2()" id="u14_input" type="text" value="" placeholder="Asukoht"/>
       </div>
+      <script>
+        var cities = ["Tallinn", "Tartu", "Kõik asukohad"];
+          function showImage2() {
+              var x = document.getElementById("u15");
+              //x.style.display = "block";
+          }
+          function autocomplete(inp, arr) {
+              /*the autocomplete function takes two arguments,
+              the text field element and an array of possible autocompleted values:*/
+              var currentFocus;
+              /*execute a function when someone writes in the text field:*/
+              inp.addEventListener("input", function(e) {
+                  var a, b, i, val = this.value;
+                  /*close any already open lists of autocompleted values*/
+                  closeAllLists();
+                  if (!val) { return false;}
+                  currentFocus = -1;
+                  /*create a DIV element that will contain the items (values):*/
+                  a = document.createElement("DIV");
+                  a.setAttribute("id", this.id + "autocomplete-list");
+                  a.setAttribute("class", "autocomplete-items");
+                  /*append the DIV element as a child of the autocomplete container:*/
+                  this.parentNode.appendChild(a);
+                  /*for each item in the array...*/
+                  for (i = 0; i < arr.length; i++) {
+                      /*check if the item starts with the same letters as the text field value:*/
+                      if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                          /*create a DIV element for each matching element:*/
+                          b = document.createElement("DIV");
+                          /*make the matching letters bold:*/
+                          b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                          b.innerHTML += arr[i].substr(val.length);
+                          /*insert a input field that will hold the current array item's value:*/
+                          b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                          /*execute a function when someone clicks on the item value (DIV element):*/
+                          b.addEventListener("click", function(e) {
+                              /*insert the value for the autocomplete text field:*/
+                              inp.value = this.getElementsByTagName("input")[0].value;
+                              /*close the list of autocompleted values,
+                              (or any other open lists of autocompleted values:*/
+                              closeAllLists();
+                          });
+                          a.appendChild(b);
+                      }
+                  }
+              });
+              /*execute a function presses a key on the keyboard:*/
+              inp.addEventListener("keydown", function(e) {
+                  var x = document.getElementById(this.id + "autocomplete-list");
+                  if (x) x = x.getElementsByTagName("div");
+                  if (e.keyCode == 40) {
+                      /*If the arrow DOWN key is pressed,
+                      increase the currentFocus variable:*/
+                      currentFocus++;
+                      /*and and make the current item more visible:*/
+                      addActive(x);
+                  } else if (e.keyCode == 38) { //up
+                      /*If the arrow UP key is pressed,
+                      decrease the currentFocus variable:*/
+                      currentFocus--;
+                      /*and and make the current item more visible:*/
+                      addActive(x);
+                  } else if (e.keyCode == 13) {
+                      /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                      e.preventDefault();
+                      if (currentFocus > -1) {
+                          /*and simulate a click on the "active" item:*/
+                          if (x) x[currentFocus].click();
+                      }
+                  }
+              });
+              function addActive(x) {
+                  /*a function to classify an item as "active":*/
+                  if (!x) return false;
+                  /*start by removing the "active" class on all items:*/
+                  removeActive(x);
+                  if (currentFocus >= x.length) currentFocus = 0;
+                  if (currentFocus < 0) currentFocus = (x.length - 1);
+                  /*add class "autocomplete-active":*/
+                  x[currentFocus].classList.add("autocomplete-active");
+              }
+              function removeActive(x) {
+                  /*a function to remove the "active" class from all autocomplete items:*/
+                  for (var i = 0; i < x.length; i++) {
+                      x[i].classList.remove("autocomplete-active");
+                  }
+              }
+              function closeAllLists(elmnt) {
+                  /*close all autocomplete lists in the document,
+                  except the one passed as an argument:*/
+                  var x = document.getElementsByClassName("autocomplete-items");
+                  for (var i = 0; i < x.length; i++) {
+                      if (elmnt != x[i] && elmnt != inp) {
+                          x[i].parentNode.removeChild(x[i]);
+                      }
+                  }
+              }
+              /*execute a function when someone clicks in the document:*/
+              document.addEventListener("click", function (e) {
+                  closeAllLists(e.target);
+              });
+          }
+          autocomplete(document.getElementById("u14_input"), cities);
+      </script>
 
       <!-- Unnamed (Shape) -->
-      <div id="u17" class="ax_default icon">
-        <img id="u17_img" class="img " src="images/docdoor/u15.png"/>
+      <div style="display:none" id="u15" class="ax_default icon">
+        <img id="u15_img" class="img " src="images/docdoor/u13.png"/>
       </div>
 
       <!-- Unnamed (Rectangle) -->
-      <div id="u18" class="ax_default button">
-        <div id="u18_div" class=""></div>
-        <div id="u18_text" class="text ">
+      <div id="u16" class="ax_default button">
+        <div id="u16_div" class=""></div>
+        <div id="u16_text" class="text ">
           <p><span>OLED ARST?</span></p>
         </div>
       </div>
