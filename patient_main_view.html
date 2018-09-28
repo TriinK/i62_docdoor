@@ -270,7 +270,7 @@
                         var length = appointments.length
                         for (var i = 0; i < length; i++) {
                             if (appointments[i].asutusNimi == "Medicum") {
-                                var row = "<tr style='margin-bottom:20px; background-color:white; box-shadow: 3px 3px 5px;'>";
+                                var row = "<tr style='margin-bottom:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);'>";
                                 row = row + "<td>" + appointments[i].asutusNimi + '<br/>' + appointments[i].medTootajaNimi + "</td>";
                                 row = row + "<td style='font-size: 20px'>" + appointments[i].startPaev + "</td>";
                                 row = row + "<td style='font-size: 20px'>" + appointments[i].startAeg + "</td>";
@@ -279,7 +279,7 @@
                                 row = row + "</tr>";
                                 $('#appointment_list').append(row);
                             } else {
-                                var row = "<tr style='margin-top:20px; background-color:white; box-shadow: 3px 3px 5px;'>";
+                                var row = "<tr style='margin-top:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);'>";
                                 row = row + "<td>" + '<img src="images/prillid.png" width="47" height="18"/>' + '<br/>' + appointments[i].medTootajaNimi +"</td>";
                                 row = row + "<td style='font-size: 20px'>" + appointments[i].startPaev + "</td>";
                                 row = row + "<td style='font-size: 20px'>" + appointments[i].startAeg + "</td>";
@@ -288,7 +288,7 @@
                                 } else {
                                     row = row + "<td style='font-size: 20px'>" + appointments[i].hind + ' \u20AC' + "</td>";
                                 }
-                                row = row + '<td><button class="btn btn-success" id="btn-bs">Vali</button>&nbsp;</button></td>';
+                                row = row + '<td><button class="btn btn-success" id="btn-bs" onClick=sendToBooking("booking.html")>Vali</button>&nbsp;</button></td>';
                                 row = row + "</tr>";
                                 row = row + "</tr>";
                                 $('#appointment_list').append(row);
@@ -304,6 +304,12 @@
 
         function sendToNational() {
             window.location.href = "";
+        }
+
+        function sendToBooking(url) {
+            newwindow=window.open(url,'name','height=1000,width=700');
+            if (window.focus) {newwindow.focus()}
+            return false;
         }
     </script>
   </body>
