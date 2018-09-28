@@ -180,7 +180,7 @@
       <div id="u38" class="ax_default heading_2">
         <div id="u38_div" class=""></div>
         <div id="u38_text" class="text ">
-          <p><span>134 resultaati Odavamad enne</span></p>
+          <p><span>2 resultaati Odavamad enne</span></p>
         </div>
       </div>
 
@@ -330,82 +330,122 @@
         </div>
       </div>
 
-      <!-- Unnamed (Horizontal Line) -->
-      <div id="u61" class="ax_default arrow">
-        <img id="u61_img" class="img " src="images/patient_main_view/u61.png"/>
-      </div>
-
-      <!-- Unnamed (Rectangle) -->
+      <!--This is were list is produced-->
       <div id="u62" class="ax_default box_2">
-        <div id="u62_div" class=""></div>
+        <table id="u62_div" class="">
+          <thead>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          <th></th>
+          </thead>
+          <tbody id="appointment_list"></tbody>
+        </table>
       </div>
 
-      <!-- Unnamed (Vertical Line) -->
+      <!-- Unnamed (Vertical Line)
       <div id="u63" class="ax_default line">
         <img id="u63_img" class="img " src="images/patient_main_view/u40.png"/>
-      </div>
+      </div>-->
 
-      <!-- Unnamed (Rectangle) -->
+      <!-- Unnamed (Rectangle)
       <div id="u64" class="ax_default best">
         <div id="u64_div" class=""></div>
         <div id="u64_text" class="text ">
           <p><span>K 21. Sept</span></p>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Vertical Line) -->
+      <!-- Unnamed (Vertical Line)
       <div id="u65" class="ax_default line">
         <img id="u65_img" class="img " src="images/patient_main_view/u40.png"/>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Vertical Line) -->
+      <!-- Unnamed (Vertical Line)
       <div id="u66" class="ax_default line">
         <img id="u66_img" class="img " src="images/patient_main_view/u40.png"/>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Rectangle) -->
+      <!-- Unnamed (Rectangle)
       <div id="u67" class="ax_default heading_1">
         <div id="u67_div" class=""></div>
         <div id="u67_text" class="text ">
           <p><span>14.15</span></p>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Rectangle) -->
+      <!-- Unnamed (Rectangle)
       <div id="u68" class="ax_default heading_1">
         <div id="u68_div" class=""></div>
         <div id="u68_text" class="text ">
           <p><span>50 </span></p>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Shape) -->
+      <!-- Unnamed (Shape)
       <div id="u69" class="ax_default euro-sign">
         <img id="u69_img" class="img " src="images/patient_main_view/u59.png"/>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Rectangle) -->
+      <!-- Unnamed (Rectangle)
       <div id="u70" class="ax_default button">
         <div id="u70_div" class=""></div>
         <div id="u70_text" class="text ">
           <p><span>&nbsp;&nbsp;&nbsp; VALI</span></p>
         </div>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Vertical Line) -->
+      <!-- Unnamed (Vertical Line)
       <div id="u71" class="ax_default line">
         <img id="u71_img" class="img " src="images/patient_main_view/u40.png"/>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Horizontal Line) -->
+      <!-- Unnamed (Horizontal Line)
       <div id="u72" class="ax_default arrow">
         <img id="u72_img" class="img " src="images/patient_main_view/u61.png"/>
-      </div>
+      </div> -->
 
-      <!-- Unnamed (Image) -->
+      <!-- Unnamed (Image)
       <div id="u73" class="ax_default image">
         <img id="u73_img" class="img " src="images/patient_main_view/u73.jpg"/>
       </div>
-    </div>
+    </div> -->
+    <script>
+        $( document ).ready(function() {
+            giveMeAllAppointments();
+        });
+
+        function giveMeAllAppointments() {
+            $.ajax(
+                {
+                    method: "GET",
+                    url: "http://arstiaeg.aws.est.sise:8080/ajahaldus-rest-fhir/graafik/searchSlot?",
+                    dataType: "json",
+                    contentType: "application/json",
+                    complete: function (response) {
+                        if (response.status == '401') {
+                            console.log("Unable to get response")
+                        }
+                        $('#appointment_list').empty();
+                        var appointments = JSON.parse(response.responseText);
+                        appointments = appointments.slottList;
+                        for (var i = 0; i < appointments.length; i++) {
+                            var row = "<tr>";
+                            row = row + "<td>" + appointments[i].asutusNimi  + "</td>";
+                            row = row + "<td>" + appointments[i].medTootajaNimi +  "</td>";
+                            row = row + "<td>" + appointments[i].start + "</td>";
+                            row = row + "<td>" + "50" + "</td>";
+                            row = row + '<td><button class="btn btn-sm">Vali</button>&nbsp;</button></td>';
+                            row = row + "</tr>";
+                            $('#appointment_list').append(row);
+                            console.log(row);
+                        }
+                    }
+                }
+            );
+        }
+
+    </script>
   </body>
 </html>

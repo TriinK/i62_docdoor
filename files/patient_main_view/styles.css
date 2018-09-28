@@ -9,6 +9,10 @@
   margin-right:auto;
   text-align:left;
 }
+
+#whiteBlock {
+  background-color:white;
+}
 #base {
   position:absolute;
   z-index:0;
