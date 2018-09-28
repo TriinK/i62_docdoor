@@ -1,6 +1,6 @@
 ﻿body {
   margin:0px;
-  background-color:rgba(204, 204, 204, 1);
+  background-color: rgb(232, 232, 232);
   background-image:none;
   position:relative;
   left:-0px;
@@ -10,8 +10,18 @@
   text-align:left;
 }
 
-#whiteBlock {
-  background-color:white;
+td {
+  border-right: solid 1px grey;
+  border-left: solid 1px grey;
+}
+
+@font-face {
+  font-family: 'Archia-Regular';
+  url('../fonts/Archia-Regular.otf')
+  format('opentype');
+}
+#btn-bs {
+  background-color:rgb(1, 132, 72);
 }
 #base {
   position:absolute;
@@ -1021,7 +1031,7 @@
 }
 #u49_div {
   border-width:0px;
-  position:absolute;
+  position:relative;
   left:0px;
   top:0px;
   width:829px;
@@ -1474,7 +1484,7 @@
 }
 #u62_div {
   border-width:0px;
-  position:absolute;
+  position:relative;
   left:0px;
   top:0px;
   width:829px;
