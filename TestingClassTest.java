@@ -3,6 +3,9 @@ import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.codeborne.selenide.Selenide.*;
 
 class TestingClassTest {
@@ -27,19 +30,21 @@ class TestingClassTest {
         toObject(result);
     }
 
-    public PhysicianInfo toObject(SelenideElement result) {
-        PhysicianInfo info = new PhysicianInfo();
-        String[] results = result.text().split("\n");
+    public List<PhysicianInfo> toObject(SelenideElement result) {
+        List<PhysicianInfo> physicianList = new ArrayList<PhysicianInfo>();
+             String[] results = result.text().split("\n");
         for (String line:results) {
             String[] splitted = line.split(" ");
             if (splitted[1].equals("GÜNEKOLOOGI")) {
+                PhysicianInfo info = new PhysicianInfo();
                 info.setFirstname(splitted[4]);
                 info.setLastname(splitted[3].substring(0,splitted[3].length()-1));
                 info.setTime(splitted[6]);
                 info.setDate(splitted[5]);
+                physicianList.add(info);
             }
         }
-        return info;
+        return physicianList;
     }
 }
 
