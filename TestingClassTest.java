@@ -2,11 +2,8 @@ import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static com.codeborne.selenide.Selenide.*;
-import static com.codeborne.selenide.Condition.*;
 
 class TestingClassTest {
 
@@ -24,11 +21,25 @@ class TestingClassTest {
         $("select[name='search_group']").selectOptionByValue("E1");
         $("select[name='search_service']").click();
         $("select[name='search_service']").selectOptionByValue("EG");
-        //$("select[name='search_group']").selectOptionByValue("AKU");
         $("input[value='Otsi']").click();
         sleep(2000);
         result = $("div[class='mob-table-wrap']");
-        System.out.println(result.text());
+        toObject(result);
+    }
+
+    public PhysicianInfo toObject(SelenideElement result) {
+        PhysicianInfo info = new PhysicianInfo();
+        String[] results = result.text().split("\n");
+        for (String line:results) {
+            String[] splitted = line.split(" ");
+            if (splitted[1].equals("GÜNEKOLOOGI")) {
+                info.setFirstname(splitted[4]);
+                info.setLastname(splitted[3].substring(0,splitted[3].length()-1));
+                info.setTime(splitted[6]);
+                info.setDate(splitted[5]);
+            }
+        }
+        return info;
     }
 }
 
