@@ -317,6 +317,13 @@
             if (window.focus) {newwindow.focus()}
             return false;
         }
+
+        $(document).on('click','#u18',function(event, ui){
+            event.preventDefault();
+            console.log('u1');
+            window.location.href = "index.html#g=1&p=docdoor&c=1";
+        });
+
     </script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
