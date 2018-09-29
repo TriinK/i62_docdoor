@@ -17,6 +17,8 @@
     <script src="data/document.js"></script>
     <script src="resources/scripts/prototypePost.js"></script>
     <script src="files/patient_main_view/data.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
     <script type="text/javascript">
       $axure.utils.getTransparentGifPath = function() { return 'resources/images/transparent.gif'; };
       $axure.utils.getOtherPath = function() { return 'resources/Other.html'; };
@@ -135,8 +137,9 @@
       <!-- Unnamed (Droplist) -->
       <div id="u34" class="ax_default droplist">
         <select id="u34_input">
-          <option selected value="   Odavamad enne">&nbsp;&nbsp; Odavamad enne</option>
+          <option selected value="   Varasemad enne">&nbsp;&nbsp; Varasemad enne</option>
           <option value="   Kallimad enne">&nbsp;&nbsp; Kallimad enne</option>
+          <option value="   Odavamad enne">&nbsp;&nbsp; Odavamad enne</option>
         </select>
       </div>
 
@@ -243,7 +246,7 @@
 
       <!-- Unnamed (Rectangle) -->
       <div id="u49" class="ax_default box_2">
-        <table id="u62_ div" class="table table-striped" style="border-collapse:separate; border-spacing:0 15px; margin-top:-15px;">
+        <table id="u62_ div" class="table table-striped" style="border-collapse:separate; border-spacing:0 15px; margin-top:-15px; border-radius: 25px;">
           <tbody id="appointment_list"></tbody>
         </table>
       </div>
@@ -288,10 +291,11 @@
                                 } else {
                                     row = row + "<td style='font-size: 20px'>" + appointments[i].hind + ' \u20AC' + "</td>";
                                 }
-                                row = row + '<td><button class="btn btn-success" id="btn-bs" onClick=sendToBooking("booking.html")>Vali</button>&nbsp;</button></td>';
+                                row = row + '<td><button type="buton" class="btn btn-success" id="btn-bs" onClick=sendToBooking("booking.html")>Vali&nbsp;</button></td>';
                                 row = row + "</tr>";
                                 row = row + "</tr>";
                                 $('#appointment_list').append(row);
+
                             }
                         }
                     }
@@ -307,10 +311,14 @@
         }
 
         function sendToBooking(url) {
-            newwindow=window.open(url,'name','height=1000,width=700');
+            newwindow=window.open(url,'name','height=700,width=700');
             if (window.focus) {newwindow.focus()}
             return false;
         }
     </script>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.0-rc2/js/bootstrap.min.js"></script>
   </body>
 </html>
