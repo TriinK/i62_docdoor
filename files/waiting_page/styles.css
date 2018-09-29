@@ -259,12 +259,11 @@
   word-wrap:break-word;
 }
 #u88_img {
-  border-width:0px;
-  position:absolute;
+  position:center;
   left:0px;
-  top:0px;
-  width:277px;
-  height:63px;
+  top:25px;
+  width:80%;
+  height:50%;
 }
 #u88 {
   border-width:0px;

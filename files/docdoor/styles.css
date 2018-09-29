@@ -1,6 +1,6 @@
 ﻿body {
   margin:0px;
-  background-image:url('../../images/docdoor/bg.jpg');
+  background-image:url('../../images/docdoor/bg.png');
   background-position:center center;
   background-repeat:no-repeat;
   background-attachment:fixed;
@@ -101,19 +101,17 @@ input[type=submit] {
 }
 #u1_img {
   border-width:0px;
-  position:absolute;
-  left:0px;
-  top:0px;
-  width:277px;
-  height:63px;
+  position:relative;
+  top:15px;
+  width:65%;
+  height:50%;
 }
 #u1 {
   border-width:0px;
   position:absolute;
   left:28px;
-  top:19px;
+  top:24px;
   width:277px;
-  height:63px;
   opacity:0.7;
 }
 #u1_text {
@@ -139,7 +137,7 @@ input[type=submit] {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -150,7 +148,7 @@ input[type=submit] {
   top:40px;
   width:172px;
   height:22px;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -176,18 +174,18 @@ input[type=submit] {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Bahnschrift', 'Bahnschrift Regular', 'Bahnschrift';
   font-weight:700;
   font-style:normal;
 }
 #u3 {
   border-width:0px;
   position:absolute;
-  left:800px;
+  left:760px;
   top:40px;
   width:36px;
   height:22px;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Bahnschrift', 'Bahnschrift Regular', 'Bahnschrift';
   font-weight:700;
   font-style:normal;
 }
@@ -214,7 +212,7 @@ input[type=submit] {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Arial Bold', 'Arial';
+  font-family:'Archia', 'Archia';
   font-weight:700;
   font-style:normal;
   color:#999999;
@@ -226,7 +224,7 @@ input[type=submit] {
   top:269px;
   width:248px;
   height:22px;
-  font-family:'Arial Bold', 'Arial';
+  font-family:'Archia', 'Archia';
   font-weight:700;
   font-style:normal;
   color:#999999;
@@ -253,7 +251,7 @@ input[type=submit] {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Arial Bold', 'Arial';
+  font-family:'Archia', 'Archia';
   font-weight:700;
   font-style:normal;
   color:#999999;
@@ -265,7 +263,7 @@ input[type=submit] {
   top:269px;
   width:127px;
   height:28px;
-  font-family:'Arial Bold', 'Arial';
+  font-family:'Archia', 'Archia';
   font-weight:700;
   font-style:normal;
   color:#999999;
@@ -285,7 +283,8 @@ input[type=submit] {
   top:475px;
   width:118px;
   height:22px;
-  font-size:18px;
+  font-size:14px;
+  display:none;
 }
 #u6_text {
   border-width:0px;
@@ -294,6 +293,7 @@ input[type=submit] {
   top:0px;
   width:100px;
   word-wrap:break-word;
+  display:none;
 }
 #u6_input {
   border-width:0px;
@@ -301,6 +301,16 @@ input[type=submit] {
   left:-3px;
   top:-2px;
 }
+
+.u12_input {
+  font-size: 13px;
+  padding: 10px 8px 10px 14px;
+  background: #fff;
+  border-radius: 6px;
+  position: relative;
+  display:none;
+}
+
 #u7 {
   border-width:0px;
   position:absolute;
@@ -308,7 +318,8 @@ input[type=submit] {
   top:475px;
   width:123px;
   height:22px;
-  font-size:18px;
+  font-size:14px;
+  display:none;
 }
 #u7_text {
   border-width:0px;
@@ -317,6 +328,7 @@ input[type=submit] {
   top:0px;
   width:105px;
   word-wrap:break-word;
+  display:none;
 }
 #u7_input {
   border-width:0px;
@@ -341,10 +353,10 @@ input[type=submit] {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Calibri Light', 'Calibri Regular', 'Calibri';
+  font-family:'Archia';
   font-weight:300;
   font-style:normal;
-  font-size:27px;
+  font-size:24px;
   color:#FFFFFF;
 }
 #u8 {
@@ -354,10 +366,10 @@ input[type=submit] {
   top:521px;
   width:231px;
   height:40px;
-  font-family:'Calibri Light', 'Calibri Regular', 'Calibri';
+  font-family:'Archia';
   font-weight:300;
   font-style:normal;
-  font-size:27px;
+  font-size:24px;
   color:#FFFFFF;
 }
 #u8_text {
@@ -371,7 +383,7 @@ input[type=submit] {
 #u9_img {
   border-width:0px;
   position:absolute;
-  left:-2px;
+  left:370px;
   top:-13px;
   width:40px;
   height:31px;
@@ -396,17 +408,13 @@ input[type=submit] {
 #u10_div {
   border-width:0px;
   position:absolute;
-  left:0px;
-  top:0px;
+  left:-22px;
+  top:12px;
   width:231px;
   height:64px;
   background:inherit;
   background-color:rgba(255, 255, 255, 1);
-  box-sizing:border-box;
-  border-width:1px;
-  border-style:solid;
   border-color:rgba(255, 255, 255, 1);
-  border-radius:25px;
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
@@ -442,7 +450,7 @@ input[type=submit] {
   top:0px;
   width:376px;
   height:64px;
-  font-family:'Arial';
+  font-family:'Archia';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -460,16 +468,17 @@ input[type=submit] {
 }
 #u12_input {
   position:absolute;
-  left:10px;
+  left:-45px;
   top:0px;
   width:78px;
   height:22px;
-  font-family:'Arial';
+  font-family:'Archia';
   font-weight:400;
   font-style:normal;
   font-size:14px;
   text-decoration:none;
   color:#000000;
+  display:none;
 }
 #u12_input:disabled {
   color:grayText;
@@ -514,7 +523,7 @@ input[type=submit] {
   top:0px;
   width:376px;
   height:64px;
-  font-family:'Arial';
+  font-family:'Archia';
   font-weight:400;
   font-style:normal;
   font-size:18px;
@@ -551,7 +560,7 @@ input[type=submit] {
 #u16_div {
   border-width:0px;
   position:absolute;
-  left:0px;
+  left:-100px;
   top:0px;
   width:140px;
   height:40px;
@@ -565,7 +574,7 @@ input[type=submit] {
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Calibri Bold', 'Calibri Regular', 'Calibri';
+  font-family:'Archia Bold', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
   font-size:18px;
@@ -579,10 +588,10 @@ input[type=submit] {
   top:31px;
   width:140px;
   height:40px;
-  font-family:'Calibri Bold', 'Calibri Regular', 'Calibri';
+  font-family:'Archia Bold', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
-  font-size:18px;
+  font-size:14px;
   color:#FFFFFF;
   text-align:center;
 }
@@ -593,4 +602,6 @@ input[type=submit] {
   top:9px;
   width:136px;
   word-wrap:break-word;
+  left:-100px;
+
 }

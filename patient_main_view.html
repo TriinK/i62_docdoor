@@ -35,7 +35,7 @@
 
       <!-- Unnamed (Image) -->
       <div id="u18" class="ax_default image">
-        <img id="u18_img" class="img " src="images/docdoor/u1.jpg"/>
+        <img id="u18_img" class="img " src="images/docdoor/u1.png"/>
       </div>
 
       <!-- Unnamed (Rectangle) -->
@@ -270,12 +270,13 @@
                         }
                         $('#appointment_list').empty();
                         var appointments = JSON.parse(response.responseText);
+                        console.log(appointments);
                         appointments = appointments.slottList;
                         length = Object.keys(appointments).length
                         document.getElementById("output").innerHTML = length.toString() + " resultaati, Varasemad enne";
                         for (var i = 0; i < length; i++) {
                             if (appointments[i].asutusNimi == "Medicum") {
-                                var row = "<tr style='margin-bottom:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);'>";
+                                var row = "<tr style='margin-bottom:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);'>";
                                 row = row + "<td>" + appointments[i].asutusNimi + '<br/>' + appointments[i].medTootajaNimi + "</td>";
                                 row = row + "<td style='font-size: 20px'>" + appointments[i].startPaev + "</td>";
                                 row = row + "<td style='font-size: 20px'>" + appointments[i].startAeg + "</td>";
@@ -284,7 +285,7 @@
                                 row = row + "</tr>";
                                 $('#appointment_list').append(row);
                             } else {
-                                var row = "<tr style='margin-top:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);'>";
+                                var row = "<tr style='margin-top:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);'>";
                                 row = row + "<td>" + '<img src="images/prillid.png" width="47" height="18"/>' + '<br/>' + appointments[i].medTootajaNimi +"</td>";
                                 row = row + "<td style='font-size: 20px'>" + appointments[i].startPaev + "</td>";
                                 row = row + "<td style='font-size: 20px'>" + appointments[i].startAeg + "</td>";
@@ -293,7 +294,7 @@
                                 } else {
                                     row = row + "<td style='font-size: 20px'>" + appointments[i].hind + ' \u20AC' + "</td>";
                                 }
-                                row = row + '<td><button type="buton" class="btn btn-success" id="btn-bs" onClick=sendToBooking("booking.html")>Vali&nbsp;</button></td>';
+                                row = row + '<td><button type="buton" class="btn btn-success" id="btn-bs" onClick=sendToBooking("+JSON.stringify(appointment)+")>Vali&nbsp;</button></td>';
                                 row = row + "</tr>";
                                 row = row + "</tr>";
                                 $('#appointment_list').append(row);
@@ -312,12 +313,25 @@
             window.location.href = "";
         }
 
-        function sendToBooking(url) {
-            newwindow=window.open(url,'name','height=700,width=700');
+        function sendToBooking(appointment) {
+            newwindow=window.open('booking.html','name','height=700,width=700');
+            newwindow.onload = function() {
+                //Example - 01.10.2018, 14:15 - aeg
+                newwindow.document.getElementById("u86_text").innerHTML=moment(Date.parse(appointment.start)).format("DD.MM.YYYY, HH:mm");
+                newwindow.document.getElementById("u103_text").innerHTML=moment(Date.parse(appointment.start)).format("DD.MM.YYYY, HH:mm");
+                newwindow.document.getElementById("u122_text").innerHTML=moment(Date.parse(appointment.start)).format("DD.MM.YYYY, HH:mm");
+                //Example - Põhja-Eesti Regionaalhaigla
+                newwindow.document.getElementById("u87_text").innerHTML=appointment.asutusNimi;
+                newwindow.document.getElementById("u104_text").innerHTML=appointment.asutusNimi;
+                newwindow.document.getElementById("u123_text").innerHTML=appointment.asutusNimi;
+                //Example - Marge Reek
+                newwindow.document.getElementById("u88_text").innerHTML=appointment.medTootajaNimi;
+                newwindow.document.getElementById("u105_text").innerHTML=appointment.medTootajaNimi;
+                newwindow.document.getElementById("u124_text").innerHTML=appointment.medTootajaNimi;
+            };
             if (window.focus) {newwindow.focus()}
             return false;
         }
-
         $(document).on('click','#u18',function(event, ui){
             event.preventDefault();
             console.log('u1');

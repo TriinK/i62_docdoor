@@ -1,8 +1,14 @@
-﻿.ax_default {
-  font-family:'Arial';
+﻿@font-face {
+  font-family: 'Archia-Regular';
+url('/fonts/archia-regular-webfont.woff.woff')
+format('opentype');
+}
+
+.ax_default {
+  font-family:'Archia';
   font-weight:400;
   font-style:normal;
-  font-size:13px;
+  font-size:10px;
   color:#333333;
   text-align:center;
   line-height:normal;
@@ -12,7 +18,7 @@
 .banner {
 }
 .box_2 {
-  font-family:'Arial';
+  font-family:'Archia';
   font-weight:400;
   font-style:normal;
 }
@@ -41,7 +47,7 @@
   font-family:'Arial';
   font-weight:bold;
   font-style:normal;
-  font-size:24px;
+  font-size:18px;
   text-align:left;
 }
 .middle_section {
@@ -54,7 +60,7 @@
   font-family:'Axure Handwriting';
   font-weight:bold;
   font-style:normal;
-  font-size:18px;
+  font-size:14px;
   color:#919191;
   text-align:left;
 }
@@ -124,15 +130,15 @@
   font-style:normal;
 }
 .date {
-  font-family:'Arial Bold', 'Arial';
+  font-family:'Archia';
   font-weight:700;
   font-style:normal;
-  font-size:24px;
+  font-size:20px;
   color:#999999;
   text-align:left;
 }
 .best {
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Bahnschrift', 'Bahnschrift Regular', 'Bahnschrift';
   font-weight:700;
   font-style:normal;
   font-size:18px;
@@ -149,7 +155,7 @@
 .euro-sign {
 }
 .keskmine {
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia';
   font-weight:700;
   font-style:normal;
   font-size:18px;
