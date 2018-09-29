@@ -478,5 +478,12 @@
         </div>
       </div>
     </div>
+    <iframe src="patient_main_view.html" style="display:none" id = "iframeId"></iframe>
+    <script>
+        $(document).ready(function() {
+            var divElement = document.getElementById('iframeId').contentWindow.document.getElementById('appointment_list');
+
+        });
+    </script>
   </body>
 </html>
