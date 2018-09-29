@@ -14,6 +14,7 @@
     <script src="resources/scripts/jquery-1.7.1.min.js"></script>
     <script src="resources/scripts/jquery-ui-1.8.10.custom.min.js"></script>
     <script src="resources/scripts/prototypePre.js"></script>
+    <script src="resources/scripts/moment.js"></script>
     <script src="data/document.js"></script>
     <script src="resources/scripts/prototypePost.js"></script>
     <script src="files/patient_main_view/data.js"></script>
@@ -272,29 +273,30 @@
                         var appointments = JSON.parse(response.responseText);
                         console.log(appointments);
                         appointments = appointments.slottList;
-                        length = Object.keys(appointments).length
+                        length = Object.keys(appointments).length;
                         document.getElementById("output").innerHTML = length.toString() + " resultaati, Varasemad enne";
                         for (var i = 0; i < length; i++) {
-                            if (appointments[i].asutusNimi == "Medicum") {
+                            let appointment= appointments[i];
+                            if (appointment.asutusNimi === "Medicum") {
                                 var row = "<tr style='margin-bottom:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);'>";
-                                row = row + "<td>" + appointments[i].asutusNimi + '<br/>' + appointments[i].medTootajaNimi + "</td>";
-                                row = row + "<td style='font-size: 20px'>" + appointments[i].startPaev + "</td>";
-                                row = row + "<td style='font-size: 20px'>" + appointments[i].startAeg + "</td>";
+                                row = row + "<td>" + appointment.asutusNimi + '<br/>' + appointment.medTootajaNimi + "</td>";
+                                row = row + "<td style='font-size: 20px'>" + appointment.startPaev + "</td>";
+                                row = row + "<td style='font-size: 20px'>" + appointment.startAeg + "</td>";
                                 row = row + "<td style='font-size: 20px'>" + '<span style="font-size: 20px; font-family: Archia-Regular, sans-serif;">69 \u20AC</span>' + "</td>";
                                 row = row + '<td><button class="btn btn-success" id="btn-bs" onClick="sendTo()">Vali</button>&nbsp;</button></td>';
                                 row = row + "</tr>";
                                 $('#appointment_list').append(row);
                             } else {
                                 var row = "<tr style='margin-top:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);'>";
-                                row = row + "<td>" + '<img src="images/prillid.png" width="47" height="18"/>' + '<br/>' + appointments[i].medTootajaNimi +"</td>";
-                                row = row + "<td style='font-size: 20px'>" + appointments[i].startPaev + "</td>";
-                                row = row + "<td style='font-size: 20px'>" + appointments[i].startAeg + "</td>";
-                                if (appointments[i].hind == null) {
+                                row = row + "<td>" + '<img src="images/prillid.png" width="47" height="18"/>' + '<br/>' + appointment.medTootajaNimi +"</td>";
+                                row = row + "<td style='font-size: 20px'>" + appointment.startPaev + "</td>";
+                                row = row + "<td style='font-size: 20px'>" + appointment.startAeg + "</td>";
+                                if (appointment.hind == null) {
                                     row = row + "<td style='font-size: 20px'>" + "</td>";
                                 } else {
-                                    row = row + "<td style='font-size: 20px'>" + appointments[i].hind + ' \u20AC' + "</td>";
+                                    row = row + "<td style='font-size: 20px'>" + appointment.hind + ' \u20AC' + "</td>";
                                 }
-                                row = row + '<td><button type="buton" class="btn btn-success" id="btn-bs" onClick=sendToBooking("+JSON.stringify(appointment)+")>Vali&nbsp;</button></td>';
+                                row = row + "<td><button type='buton' class='btn btn-success' id='btn-bs' onClick='sendToBooking("+JSON.stringify(appointment)+")'>Vali&nbsp;</button></td>";
                                 row = row + "</tr>";
                                 row = row + "</tr>";
                                 $('#appointment_list').append(row);
