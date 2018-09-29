@@ -172,7 +172,7 @@
       <div id="u38" class="ax_default heading_2">
         <div id="u38_div" class=""></div>
         <span id="u38_text" class="text ">
-          <script>document.getElementById("u38_text").value= length.toString() + "resultaati Odavamad enne";</script>
+          <p id="output"></p>
         </span>
       </div>
 
@@ -253,6 +253,7 @@
     </div>
     <script>
         $( document ).ready(function() {
+            var length = "";
             giveMeAllAppointments();
         });
 
@@ -260,7 +261,7 @@
             $.ajax(
                 {
                     method: "GET",
-                    url: "http://arstiaeg.aws.est.sise:8080/ajahaldus-rest-fhir/graafik/searchSlot?",
+                    url: "http://arstiaeg.aws.est.sise:8080/ajahaldus-rest-fhir/graafik/searchSlot?status=free",
                     dataType: "json",
                     contentType: "application/json",
                     complete: function (response) {
@@ -270,7 +271,8 @@
                         $('#appointment_list').empty();
                         var appointments = JSON.parse(response.responseText);
                         appointments = appointments.slottList;
-                        var length = appointments.length
+                        length = Object.keys(appointments).length
+                        document.getElementById("output").innerHTML = length.toString() + " resultaati, Varasemad enne";
                         for (var i = 0; i < length; i++) {
                             if (appointments[i].asutusNimi == "Medicum") {
                                 var row = "<tr style='margin-bottom:20px; background-color:white; box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);'>";
