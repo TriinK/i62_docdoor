@@ -27,7 +27,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia ', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -38,7 +38,7 @@
   top:40px;
   width:172px;
   height:22px;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia ', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -64,7 +64,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia ', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -75,7 +75,7 @@
   top:40px;
   width:36px;
   height:22px;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia ', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -197,7 +197,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Arial Bold', 'Arial';
+  font-family:'Arial ', 'Arial';
   font-weight:700;
   font-style:normal;
   color:#CCCCCC;
@@ -209,7 +209,7 @@
   top:416px;
   width:202px;
   height:37px;
-  font-family:'Arial Bold', 'Arial';
+  font-family:'Arial ', 'Arial';
   font-weight:700;
   font-style:normal;
   color:#CCCCCC;
@@ -261,9 +261,8 @@
 #u88_img {
   position:center;
   left:0px;
-  top:25px;
-  width:80%;
-  height:50%;
+  margin-top:18px;
+  width:65%;
 }
 #u88 {
   border-width:0px;
@@ -297,7 +296,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -308,7 +307,7 @@
   top:40px;
   width:172px;
   height:22px;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia ', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -334,7 +333,7 @@
   -moz-box-shadow:none;
   -webkit-box-shadow:none;
   box-shadow:none;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia ', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -345,7 +344,7 @@
   top:40px;
   width:36px;
   height:22px;
-  font-family:'Bahnschrift Bold', 'Bahnschrift Regular', 'Bahnschrift';
+  font-family:'Archia ', 'Archia Regular', 'Archia';
   font-weight:700;
   font-style:normal;
 }
@@ -377,6 +376,7 @@
   font-size:14px;
   text-decoration:none;
   color:#000000;
+  display:none;
 }
 #u91_input:disabled {
   color:grayText;

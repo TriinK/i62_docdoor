@@ -62,8 +62,7 @@ td {
   position:absolute;
   left:25px;
   top:15px;
-  width:80%;
-  height:50%;
+  width:65%;
 }
 #u18 {
   border-width:0px;
@@ -177,6 +176,7 @@ td {
   font-size:14px;
   text-decoration:none;
   color:#000000;
+  display:none;
 }
 #u21_input:disabled {
   color:grayText;
